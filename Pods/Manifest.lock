@@ -1,0 +1,61 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - BaiduMapKit (3.0.0)
+  - CYLTableViewPlaceHolder (1.0.8)
+  - HYBMasonryAutoCellHeight (2.0.1):
+    - Masonry (~> 0.6)
+  - IQKeyboardManager (4.0.4)
+  - Masonry (0.6.4)
+  - MBProgressHUD (1.0.0)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
+  - SDAutoLayout (2.1.7)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+
+DEPENDENCIES:
+  - AFNetworking
+  - BaiduMapKit
+  - CYLTableViewPlaceHolder
+  - HYBMasonryAutoCellHeight
+  - HYBMasonryAutoCellHeight (~> 2.0.0)
+  - IQKeyboardManager
+  - MBProgressHUD
+  - MJExtension
+  - MJRefresh
+  - SDAutoLayout
+  - SDCycleScrollView
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  BaiduMapKit: de2a726d5296d6b2dc0e974b683af73153608dcd
+  CYLTableViewPlaceHolder: 44075c119aab78bbc514c75d771d6565e19938e8
+  HYBMasonryAutoCellHeight: 9296583777080d32ba6257f55e52b7334dd481fc
+  IQKeyboardManager: 4a6f83b540283c2645aaeba2bd8dc0f09b5c77f8
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+
+COCOAPODS: 0.39.0

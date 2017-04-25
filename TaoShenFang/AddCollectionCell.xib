@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AddCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="193" height="155"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="193" height="155"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlbumAddBtn" translatesAutoresizingMaskIntoConstraints="NO" id="0OY-uT-D7A">
+                        <rect key="frame" x="0.0" y="0.0" width="193" height="125"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-cB-8fk">
+                        <rect key="frame" x="0.0" y="125" width="193" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="kKN-PR-G7d"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="0OY-uT-D7A" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="177-jS-OMb"/>
+                <constraint firstItem="Whg-cB-8fk" firstAttribute="top" secondItem="0OY-uT-D7A" secondAttribute="bottom" id="HNm-RB-GJQ"/>
+                <constraint firstAttribute="trailing" secondItem="0OY-uT-D7A" secondAttribute="trailing" id="Mnn-dF-Fge"/>
+                <constraint firstAttribute="trailing" secondItem="Whg-cB-8fk" secondAttribute="trailing" id="Nqg-F4-oGm"/>
+                <constraint firstAttribute="bottom" secondItem="Whg-cB-8fk" secondAttribute="bottom" id="Owb-UW-e6c"/>
+                <constraint firstItem="0OY-uT-D7A" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XJF-c5-NJ5"/>
+                <constraint firstItem="Whg-cB-8fk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YXD-Xz-AVb"/>
+            </constraints>
+            <size key="customSize" width="193" height="155"/>
+            <point key="canvasLocation" x="-129.5" y="245.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="AlbumAddBtn" width="200" height="200"/>
+    </resources>
+</document>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ApplyPhoneVC">
+            <connections>
+                <outlet property="rightBtn" destination="0l2-g2-b56" id="dkW-T2-QLZ"/>
+                <outlet property="textField" destination="waI-He-68K" id="JXz-Cl-xCR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="waI-He-68K">
+                    <rect key="frame" x="0.0" y="84" width="320" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="VcZ-P2-FFS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0l2-g2-b56">
+                    <rect key="frame" x="60" y="164" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="9Yg-cI-PRn"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="rightClick:" destination="-1" eventType="touchUpInside" id="omU-QB-sZW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="0l2-g2-b56" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="0xp-3N-ZEI"/>
+                <constraint firstItem="waI-He-68K" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="7Bq-UR-FUZ"/>
+                <constraint firstAttribute="trailing" secondItem="waI-He-68K" secondAttribute="trailing" id="Om4-ol-JdE"/>
+                <constraint firstItem="0l2-g2-b56" firstAttribute="top" secondItem="waI-He-68K" secondAttribute="bottom" constant="40" id="PYW-w7-CrV"/>
+                <constraint firstAttribute="trailing" secondItem="0l2-g2-b56" secondAttribute="trailing" constant="60" id="hoG-y9-uBn"/>
+                <constraint firstItem="waI-He-68K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ubE-Pa-LQW"/>
+            </constraints>
+            <point key="canvasLocation" x="103" y="286"/>
+        </view>
+    </objects>
+</document>
