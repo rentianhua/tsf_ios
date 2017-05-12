@@ -187,7 +187,7 @@
   @[@"*房源区域:",@"*小区名称:"],
   @[@"*售  价:",@"*建筑面积:",@"*房   龄:",@"楼栋号:",@"单元号:",@"门牌号:",@"套内面积:"],
   @[@"*地图坐标:",@"楼  层:",@"楼层属性:",@"物业类型:",@"抵押信息:",@"户   型:",@"房屋属性:"],
-  @[@"上传图片:",@"建筑类型:",@"建筑结构:",@"梯户比例:",@"房屋用途:",@"产权所属:",@"是否有电梯:",@"唯一住宅:",@"挂牌时间:",@"标签:",@"地铁线:"],
+  @[@"上传图片:",@"建筑类型:",@"建筑结构:",@"梯户比例:",@"房屋用途:",@"产权所属:",@"是否有电梯:",@"唯一住宅:",@"挂牌时间:",@"上次交易:",@"标签:",@"地铁线:"],
   @[@"*标题:",@"*房源描述:",@"投资分析:",@"户型介绍:",@"小区介绍:",@"税费解析:",@"装修描述:",@"周边配套:",@"教育配套:",@"交通出行:",@"核心卖点:",@"小区优势:",@"权属抵押:",@"推荐理由:"]
   ];
     }
@@ -420,9 +420,12 @@
                     cell.rightLabel.text=_model.guapaidate;
                     break;
                 case 9:
-                    cell.rightLabel.text=_model.biaoqian;
+                    cell.rightLabel.text=_model.shangcijiaoyi;
                     break;
                 case 10:
+                    cell.rightLabel.text=_model.biaoqian;
+                    break;
+                case 11:
                     cell.rightLabel.text=_model.ditiexian;
                     break;
                 default:
@@ -665,11 +668,28 @@
                 }];
                 
                 [self.view addSubview:datePickVC];
-            } else if (indexPath.row==9 || indexPath.row==10){
+            } else if (indexPath.row==9){//选择时间
+                HMDatePickView * datePickVC=[[HMDatePickView alloc]initWithFrame:self.view.bounds selectTitle:@""];
+                
+                //距离当前日期的年份差（设置最大可选日期）
+                datePickVC.maxYear = -1;
+                //设置最小可选日期(年分差)
+                //    _datePickVC.minYear = 10;
+                datePickVC.date = [NSDate date];
+                //设置字体颜色
+                datePickVC.fontColor = [UIColor redColor];
+                //日期回调
+                [datePickVC showView:^(NSString *str1) {
+                    _model.shangcijiaoyi=str1;
+                    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                }];
+                
+                [self.view addSubview:datePickVC];
+            } else if (indexPath.row==10 || indexPath.row==11){
                 NSArray * array=[NSArray array];
                 NSArray * biaoqianArray=@[@"全明格局",@"全景落地窗",@"厨卫不对门",@"户型方正",@"主卧带卫",@"车位车库"];
                 NSArray * ditieArray=@[@"1号线(罗宝线)",@"2号线(蛇口线)",@"3号线(龙岗线)",@"4号线(龙华线)",@"5号线(环中线)",@"7号线",@"9号线",@"11号线"];
-                if (indexPath.row==9) {
+                if (indexPath.row==10) {
                     array=biaoqianArray;
                 } else{
                     array=ditieArray;
@@ -680,7 +700,7 @@
                     
                     
                   
-                    if (indexPath.row==9) {
+                    if (indexPath.row==10) {
                         NSString * str=[selectArray componentsJoinedByString:@","];
                         _model.biaoqian=str;
                     } else{
