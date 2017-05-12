@@ -10,7 +10,7 @@
 #import <Masonry.h>
 #import "OtherHeader.h"
 #import "BQLabel.h"
-#define BQFONT [UIFont systemFontOfSize:10]
+#define BQFONT [UIFont systemFontOfSize:8.5]
 
 @interface TSFAgentCell ()
 
@@ -19,6 +19,8 @@
 @property (nonatomic,strong)BQLabel * biaoqian2;
 @property (nonatomic,strong)BQLabel * biaoqian3;
 @property (nonatomic,strong)BQLabel * biaoqian4;
+@property (nonatomic,strong)BQLabel * biaoqian5;
+@property (nonatomic,strong)BQLabel * biaoqian6;
 
 @end
 
@@ -68,6 +70,25 @@
     biaoqian4.layer.borderWidth=0.9;
     biaoqian4.textInsets=UIEdgeInsetsMake(2, 0, 2, 0);
     
+    BQLabel * biaoqian5=[[BQLabel alloc]init];
+    biaoqian5.textColor=UIColorFromRGB(0XCC6699);
+    biaoqian5.font=BQFONT;
+    [self.labelView addSubview:biaoqian5];
+    self.biaoqian5=biaoqian5;
+    biaoqian5.hidden=YES;
+    biaoqian5.layer.borderColor=UIColorFromRGB(0XCC6699).CGColor;
+    biaoqian5.layer.borderWidth=0.9;
+    biaoqian5.textInsets=UIEdgeInsetsMake(2, 0, 2, 0);
+    
+    BQLabel * biaoqian6=[[BQLabel alloc]init];
+    biaoqian6.textColor=UIColorFromRGB(0XFFB6C1);
+    biaoqian6.font=BQFONT;
+    [self.labelView addSubview:biaoqian6];
+    self.biaoqian6=biaoqian6;
+    biaoqian6.hidden=YES;
+    biaoqian6.layer.borderColor=UIColorFromRGB(0XFFB6C1).CGColor;
+    biaoqian6.layer.borderWidth=0.9;
+    biaoqian6.textInsets=UIEdgeInsetsMake(2, 0, 2, 0);
 }
 
 
@@ -78,16 +99,18 @@
         return;
     }
     NSArray * array=[_biaoqian componentsSeparatedByString:@","];
+    _biaoqian1.hidden=YES;
+    _biaoqian2.hidden=YES;
+    _biaoqian3.hidden=YES;
+    _biaoqian4.hidden=YES;
+    _biaoqian5.hidden=YES;
+    _biaoqian6.hidden=YES;
     
     switch (array.count) {
         case 0:
-            
             break;
         case 1:{
             _biaoqian1.hidden=NO;
-            _biaoqian2.hidden=YES;
-            _biaoqian3.hidden=YES;
-            _biaoqian4.hidden=YES;
             
             [_biaoqian1 mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(0);
@@ -103,8 +126,7 @@
         case 2:{
             _biaoqian1.hidden=NO;
             _biaoqian2.hidden=NO;
-            _biaoqian3.hidden=YES;
-            _biaoqian4.hidden=YES;
+            
             [_biaoqian1 mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(0);
                 make.top.mas_equalTo(2);
@@ -115,7 +137,6 @@
             }];
             
             _biaoqian1.text=[NSString stringWithFormat:@" %@ ",array[0]];
-            
             
             [_biaoqian2 mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(_biaoqian1.mas_right).offset(3);
@@ -132,7 +153,7 @@
             _biaoqian1.hidden=NO;
             _biaoqian2.hidden=NO;
             _biaoqian3.hidden=NO;
-            _biaoqian4.hidden=YES;
+
             [_biaoqian1 mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(0);
                 make.top.mas_equalTo(2);
@@ -168,6 +189,7 @@
             _biaoqian2.hidden=NO;
             _biaoqian3.hidden=NO;
             _biaoqian4.hidden=NO;
+            
             [_biaoqian1 mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(0);
                 make.top.mas_equalTo(2);
@@ -205,7 +227,117 @@
         }
             
             break;
+        case 5:{
+            _biaoqian1.hidden=NO;
+            _biaoqian2.hidden=NO;
+            _biaoqian3.hidden=NO;
+            _biaoqian4.hidden=NO;
+            _biaoqian5.hidden=NO;
+
+            [_biaoqian1 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(0);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+                
+            }];
             
+            _biaoqian1.text=[NSString stringWithFormat:@" %@ ",array[0]];
+            
+            [_biaoqian2 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(_biaoqian1.mas_right).offset(3);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+            }];
+            _biaoqian2.text=[NSString stringWithFormat:@" %@ ",array[1]];
+            
+            [_biaoqian3 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(_biaoqian2.mas_right).offset(3);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+            }];
+            _biaoqian3.text=[NSString stringWithFormat:@" %@ ",array[2]];
+            
+            [_biaoqian4 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(_biaoqian3.mas_right).offset(3);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+            }];
+            _biaoqian4.text=[NSString stringWithFormat:@" %@ ",array[3]];
+            
+            [_biaoqian5 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(_biaoqian4.mas_right).offset(3);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+            }];
+            _biaoqian5.text=[NSString stringWithFormat:@" %@ ",array[4]];
+        }
+            
+            break;
+        case 6:{
+            _biaoqian1.hidden=NO;
+            _biaoqian2.hidden=NO;
+            _biaoqian3.hidden=NO;
+            _biaoqian4.hidden=NO;
+            _biaoqian5.hidden=NO;
+            _biaoqian6.hidden=NO;
+            
+            [_biaoqian1 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(0);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+                
+            }];
+            
+            _biaoqian1.text=[NSString stringWithFormat:@" %@ ",array[0]];
+            
+            [_biaoqian2 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(_biaoqian1.mas_right).offset(3);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+            }];
+            _biaoqian2.text=[NSString stringWithFormat:@" %@ ",array[1]];
+            
+            [_biaoqian3 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(_biaoqian2.mas_right).offset(3);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+            }];
+            _biaoqian3.text=[NSString stringWithFormat:@" %@ ",array[2]];
+            
+            [_biaoqian4 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(_biaoqian3.mas_right).offset(3);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+            }];
+            _biaoqian4.text=[NSString stringWithFormat:@" %@ ",array[3]];
+            
+            [_biaoqian5 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(_biaoqian4.mas_right).offset(3);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+            }];
+            _biaoqian5.text=[NSString stringWithFormat:@" %@ ",array[4]];
+            
+            [_biaoqian6 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(_biaoqian5.mas_right).offset(3);
+                make.top.mas_equalTo(2);
+                make.bottom.mas_equalTo(0);
+                make.width.mas_greaterThanOrEqualTo(30);
+            }];
+            _biaoqian6.text=[NSString stringWithFormat:@" %@ ",array[5]];
+        }
+            
+            break;
         default:
             break;
     }
