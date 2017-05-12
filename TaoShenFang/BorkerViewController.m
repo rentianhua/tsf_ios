@@ -347,7 +347,7 @@
     } else if ([model.dengji isEqualToString:@"2"]){
         dengji=@"优秀经纪人";
     }
-    else if ([model.dengji isEqualToString:@"2"]){
+    else if ([model.dengji isEqualToString:@"3"]){
         dengji=@"高级经纪人";
     } else{
         dengji=@"资深经纪人";
