@@ -33,6 +33,7 @@
 #import "TSFBuyManagerVC.h"//求购管理
 #import "TSFUserRentVC.h"//我要租房
 #import "TSFUserBuyVC.h"//我要买房
+#import "TSFCalculatorVC.h"//购房计算器
 
 #define IMGHEIGHT kMainScreenWidth*0.6
 
@@ -61,20 +62,20 @@
 
 - (NSArray *)offLineImgArr{
     if (_offLineImgArr==nil) {
-        _offLineImgArr=[NSArray arrayWithObjects:@"maifang_01",@"chuzu_01",@"weituo_01",@"guanzhu_01",@"youhui_01",@"lishi_01", nil];
+        _offLineImgArr=[NSArray arrayWithObjects:@"maifang_01",@"chuzu_01",@"weituo_01",@"guanzhu_01",@"youhui_01",@"lishi_01",@"jisuanqi", nil];
     }
     return _offLineImgArr;
 }
 
 - (NSArray *)userImgArr{
     if (_userImgArr==nil) {
-        _userImgArr=[NSArray arrayWithObjects:@"guanzhu_01",@"maifang_01",@"chuzu_01",@"qiuzu_01",@"maifang_10",@"youhui_01",@"goudi_01",@"lishi_01", nil];
+        _userImgArr=[NSArray arrayWithObjects:@"guanzhu_01",@"maifang_01",@"chuzu_01",@"qiuzu_01",@"maifang_10",@"youhui_01",@"goudi_01",@"lishi_01",@"jisuanqi", nil];
     }
     return _userImgArr;
 }
 - (NSArray *)borkerImgArr{
     if (_borkerImgArr==nil) {
-        _borkerImgArr=[NSArray arrayWithObjects:@"maifang_01",@"chuzu_01",@"chengjiao_01",@"qiuzu_01",@"maifang_10",@"entrustlist_01",@"goudi_01",@"youhui_01",@"lishi_01", nil];
+        _borkerImgArr=[NSArray arrayWithObjects:@"maifang_01",@"chuzu_01",@"chengjiao_01",@"qiuzu_01",@"maifang_10",@"entrustlist_01",@"goudi_01",@"youhui_01",@"lishi_01",@"jisuanqi", nil];
     }
     return _borkerImgArr;
 }
@@ -127,21 +128,21 @@
 }
 - (NSArray *)offLineArray{
     if (_offLineArray==nil) {
-        _offLineArray=@[@"我的二手房",@"我的出租",@"我的委托",@"我的关注",@"我的优惠券",@"历史记录"];
+        _offLineArray=@[@"我的二手房",@"我的出租",@"我的委托",@"我的关注",@"我的优惠券",@"历史记录",@"购房计算器"];
     }
     return _offLineArray;
 }
 
 - (NSArray * )userArray{
     if (_userArray==nil) {
-        _userArray=@[@"我的关注",@"我要卖房",@"我要出租",@"我要租房",@"我要买房",@"我的优惠券",@"勾地订单",@"历史记录"];
+        _userArray=@[@"我的关注",@"我要卖房",@"我要出租",@"我要租房",@"我要买房",@"我的优惠券",@"勾地订单",@"历史记录",@"购房计算器"];
     }
     return _userArray;
 }
 
 - (NSArray *)borkerArray{
     if (_borkerArray==nil) {
-        _borkerArray=@[@"二手房管理",@"出租房管理",@"成交房源",@"求租管理",@"求购管理",@"委托管理",@"勾地订单",@"我的优惠券",@"历史记录"];
+        _borkerArray=@[@"二手房管理",@"出租房管理",@"成交房源",@"求租管理",@"求购管理",@"委托管理",@"勾地订单",@"我的优惠券",@"历史记录",@"购房计算器"];
     }
     return _borkerArray;
 }
@@ -335,8 +336,13 @@
                         [self push:VC];
                     }
                         break;
-                    default:{//历史记录
+                    case 7:{//历史记录
                         TSFRecordVC * VC=[[TSFRecordVC alloc]init];
+                        [self push:VC];
+                    }
+                        break;
+                    default:{//购房计算器
+                        TSFCalculatorVC * VC=[[TSFCalculatorVC alloc]init];
                         [self push:VC];
                     }
                         break;
@@ -394,8 +400,13 @@
                         [self push:VC];
                     }
                         break;
-                    default:{//历史记录
-                        TSFRecordVC * VC=[[TSFRecordVC alloc]init];
+                    case 8:{//历史记录
+                         TSFRecordVC * VC=[[TSFRecordVC alloc]init];
+                        [self push:VC];
+                    }
+                        break;
+                    default:{//购房计算器
+                        TSFCalculatorVC * VC=[[TSFCalculatorVC alloc]init];
                         [self push:VC];
                     }
                         break;
