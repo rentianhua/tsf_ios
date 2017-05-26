@@ -80,8 +80,6 @@
 		CA0667D31DE587BD002CB02B /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0667CA1DE587BD002CB02B /* RSADataVerifier.m */; };
 		CA0667D61DE587F5002CB02B /* APAuthV2Info.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0667D51DE587F5002CB02B /* APAuthV2Info.m */; };
 		CA0667D81DE58816002CB02B /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA0667D71DE58816002CB02B /* AlipaySDK.bundle */; };
-		CA0667DB1DE58821002CB02B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0667D91DE58821002CB02B /* Icon.png */; };
-		CA0667DC1DE58821002CB02B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0667DA1DE58821002CB02B /* Icon@2x.png */; };
 		CA0667DF1DE59108002CB02B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0667DE1DE59108002CB02B /* libc++.tbd */; };
 		CA0667E11DE59113002CB02B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0667E01DE59113002CB02B /* libz.tbd */; };
 		CA0667E31DE59120002CB02B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0667E21DE59120002CB02B /* SystemConfiguration.framework */; };
@@ -447,7 +445,7 @@
 		CAFF25061DEEC16000ED76D7 /* TSFNewDTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAFF25041DEEC16000ED76D7 /* TSFNewDTCell.xib */; };
 		CAFF9ABB1E0B7F3C00380DA9 /* Chat_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFF9ABA1E0B7F3C00380DA9 /* Chat_Model.m */; };
 		CAFF9ABE1E0B7F5200380DA9 /* Chat_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFF9ABD1E0B7F5200380DA9 /* Chat_Cell.m */; };
-		CD3772FFF90C56B1E874ED8C /* libPods-TaoShenFang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4AD2F49FF40E0847E27692 /* libPods-TaoShenFang.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		E13E4C731EBB237F00014EEB /* libPods-TaoShenFang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E13E4C721EBB237F00014EEB /* libPods-TaoShenFang.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -682,8 +680,6 @@
 		CA0667D41DE587F5002CB02B /* APAuthV2Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAuthV2Info.h; sourceTree = "<group>"; };
 		CA0667D51DE587F5002CB02B /* APAuthV2Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAuthV2Info.m; sourceTree = "<group>"; };
 		CA0667D71DE58816002CB02B /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		CA0667D91DE58821002CB02B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		CA0667DA1DE58821002CB02B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		CA0667DD1DE58AD7002CB02B /* AliSDKDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AliSDKDemo-Prefix.pch"; sourceTree = "<group>"; };
 		CA0667DE1DE59108002CB02B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		CA0667E01DE59113002CB02B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -1342,6 +1338,7 @@
 		CAFF9ABC1E0B7F5200380DA9 /* Chat_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chat_Cell.h; sourceTree = "<group>"; };
 		CAFF9ABD1E0B7F5200380DA9 /* Chat_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chat_Cell.m; sourceTree = "<group>"; };
 		DA72559C3570382C0574B1B1 /* Pods-TaoShenFang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaoShenFang.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaoShenFang/Pods-TaoShenFang.release.xcconfig"; sourceTree = "<group>"; };
+		E13E4C721EBB237F00014EEB /* libPods-TaoShenFang.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-TaoShenFang.a"; path = "build/Debug-iphoneos/libPods-TaoShenFang.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1365,7 +1362,7 @@
 				CA0667DF1DE59108002CB02B /* libc++.tbd in Frameworks */,
 				CA0667F31DE593D9002CB02B /* AlipaySDK.framework in Frameworks */,
 				CA25E29B1DA8EB2600421F48 /* ImageIO.framework in Frameworks */,
-				CD3772FFF90C56B1E874ED8C /* libPods-TaoShenFang.a in Frameworks */,
+				E13E4C731EBB237F00014EEB /* libPods-TaoShenFang.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1389,6 +1386,7 @@
 		1A31DDF1ACEB1F6EFCC198DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E13E4C721EBB237F00014EEB /* libPods-TaoShenFang.a */,
 				CA57316F1E1DFC5400CDC102 /* libxml2.tbd */,
 				CA0667F01DE5916D002CB02B /* CFNetwork.framework */,
 				CA0667EE1DE59166002CB02B /* Foundation.framework */,
@@ -2364,8 +2362,6 @@
 				CA0667F41DE594B8002CB02B /* libcrypto.a */,
 				CA0667F51DE594B8002CB02B /* libssl.a */,
 				CA0667DD1DE58AD7002CB02B /* AliSDKDemo-Prefix.pch */,
-				CA0667D91DE58821002CB02B /* Icon.png */,
-				CA0667DA1DE58821002CB02B /* Icon@2x.png */,
 				CA0667D71DE58816002CB02B /* AlipaySDK.bundle */,
 				CA0667D41DE587F5002CB02B /* APAuthV2Info.h */,
 				CA0667D51DE587F5002CB02B /* APAuthV2Info.m */,
@@ -3431,7 +3427,6 @@
 				CA12E6171DCB3CB9008F8217 /* TSFAgentDetailCell.xib in Resources */,
 				CAFE069E1DD9AB9F00D2604E /* MyHandTextCell.xib in Resources */,
 				CA089DE11D7EA79200486923 /* PersonalOtherCell.xib in Resources */,
-				CA0667DC1DE58821002CB02B /* Icon@2x.png in Resources */,
 				CA12E6211DCB4067008F8217 /* TSFAgentGradeCell.xib in Resources */,
 				CA01983E1DC9F843007151E0 /* TSFEntrustCell.xib in Resources */,
 				CA0E839F1D8692FE00D6323A /* PB.bundle in Resources */,
@@ -3455,7 +3450,6 @@
 				CA0181B91DC82221001CC16E /* TSFRentCell.xib in Resources */,
 				CA09F69A1D64A3E3008C9D2A /* LaunchScreen.storyboard in Resources */,
 				CA16D7141DD1A371009EE3E5 /* TSFCollectionHeadView.xib in Resources */,
-				CA0667DB1DE58821002CB02B /* Icon.png in Resources */,
 				CA73B3921DC8C8EC001B4DC7 /* TSFSuccessCell.xib in Resources */,
 				CAF9813C1D77F9FA00581BEC /* OwnerEntrustVC.xib in Resources */,
 				CA0AB7F51DE8388B00986096 /* TSFNewRoomCell.xib in Resources */,
@@ -4082,7 +4076,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zhiyang Chen (29B2VLB2PS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: TianHua Ren (LE6L6BP667)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4TLBM7Z655;
 				ENABLE_BITCODE = NO;
@@ -4103,6 +4097,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/TaoShenFang/AliPay",
 					"$(PROJECT_DIR)/TaoShenFang",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -4172,7 +4167,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zhiyang Chen (29B2VLB2PS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Ruian xingye real estate consulting co., LTD (4TLBM7Z655)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 4TLBM7Z655;
 				ENABLE_BITCODE = NO;
@@ -4193,6 +4188,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/TaoShenFang/AliPay",
 					"$(PROJECT_DIR)/TaoShenFang",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -4251,8 +4247,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruian.taoshenfang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "52de5fcd-f488-4269-ba60-133c63037b72";
-				PROVISIONING_PROFILE_SPECIFIER = hoc_taoshenfang;
+				PROVISIONING_PROFILE = "f8eae13d-dd2a-464a-9c78-2709d9ecbb2c";
+				PROVISIONING_PROFILE_SPECIFIER = Distribution_taoshenfang2;
 			};
 			name = Release;
 		};
