@@ -354,7 +354,7 @@
             cell.confirmBtn.tag=indexPath.row;
             [cell.confirmBtn addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
             if ([model.lock isEqualToString:@"1"]) {//已经确认
-                [cell.confirmBtn setTitle:@"已确认" forState:UIControlStateNormal];
+                [cell.confirmBtn setTitle:model.zhuangtai forState:UIControlStateNormal];
                 [cell.confirmBtn setBackgroundColor:DESCCOL];
                 cell.confirmBtn.userInteractionEnabled=NO;
             } else{
@@ -371,7 +371,7 @@
         cell.confirmBtn.tag=indexPath.row;
         [cell.confirmBtn addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
         if ([model.lock isEqualToString:@"1"]) {//已经确认
-            [cell.confirmBtn setTitle:@"已确认" forState:UIControlStateNormal];
+            [cell.confirmBtn setTitle:model.zhuangtai forState:UIControlStateNormal];
             [cell.confirmBtn setBackgroundColor:DESCCOL];
             cell.confirmBtn.userInteractionEnabled=NO;
         } else{
@@ -401,7 +401,7 @@
     
     if ([yuyueDate isEqualToDate:[nowDate laterDate:yuyueDate]]) {//预约时间大于现在时间
         [cell.btn setBackgroundImage:[UIImage imageNamed:@"标签_01"] forState:UIControlStateNormal];
-        [cell.btn setTitle:@"新预约" forState:UIControlStateNormal];
+        [cell.btn setTitle:model.zhuangtai forState:UIControlStateNormal];
         [cell.btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
     if ([yuyueDate isEqualToDate:[nowDate earlierDate:yuyueDate]]) {//预约时间小于现在时间
@@ -410,8 +410,13 @@
         [cell.btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         cell.confirmBtn.hidden=YES;
     }
-    
-    
+    if ([model.zhuangtai isEqual:@"已取消"]) {//预约时间小于现在时间
+        [cell.btn setBackgroundImage:[UIImage imageNamed:@"标签_02"] forState:UIControlStateNormal];
+        [cell.btn setTitle:model.zhuangtai forState:UIControlStateNormal];
+        [cell.btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        cell.confirmBtn.hidden=YES;
+    }
+
     return cell;
 }
 
@@ -461,7 +466,7 @@
 //按钮显示的内容
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return @"删除";
+    return @"取消预约";
     
 }
 //这里就是点击删除执行的方法
@@ -478,12 +483,12 @@
                                @"username":username
                                };
         [YJProgressHUD showProgress:@"网络不行了" inView:self.view];
-        [ZYWHttpEngine AllPostURL:[NSString stringWithFormat:@"%@g=api&m=user&a=yuyue_del",URLSTR] params:param success:^(id responseObj) {
+        [ZYWHttpEngine AllPostURL:[NSString stringWithFormat:@"%@g=api&m=user&a=cancelyuyue",URLSTR] params:param success:^(id responseObj) {
             [YJProgressHUD hide];
             if (responseObj) {
                 if ([responseObj[@"success"] isEqualToNumber:@101]) {//预约删除成功
                     
-                    [YJProgressHUD showMessage:@"预约删除成功" inView:weakSelf.view];
+                    [YJProgressHUD showMessage:@"预约取消成功" inView:weakSelf.view];
                     
                     dispatch_time_t time=dispatch_time(DISPATCH_TIME_NOW, (int64_t) 1.0*NSEC_PER_SEC);
                     dispatch_after(time, dispatch_get_main_queue(), ^{
@@ -491,13 +496,13 @@
                     });
 
                 } else if ([responseObj[@"success"] isEqualToNumber:@113]){
-                    [YJProgressHUD showMessage:@"已锁定，不能删除" inView:weakSelf.view];
+                    [YJProgressHUD showMessage:@"取消失败" inView:weakSelf.view];
                 }
             }
             
         } failure:^(NSError *error) {
             [YJProgressHUD hide];
-             [YJProgressHUD showMessage:@"网络不行了" inView:weakSelf.view];
+            [YJProgressHUD showMessage:@"网络不行了" inView:weakSelf.view];
         }];
     }
 
@@ -507,14 +512,38 @@
     
     if ([NSUSER_DEF(USERINFO)[@"modelid"] isEqualToString:@"35"]) {//普通用户
         if (self.select==SegmentSelectLeft) {
-            return YES;
+            OrderModel * model=self.dataArray[indexPath.row];
+            NSDate * now=[NSDate date];
+            NSTimeZone * fromzone=[NSTimeZone systemTimeZone];
+            NSInteger fromintervel=[fromzone secondsFromGMTForDate:now];
+            NSDate * nowDate=[now dateByAddingTimeInterval:fromintervel];//当前时间
+            //获取预约时间
+            NSString * yuyuetime=model.yuyuetime;
+            NSArray * array=[yuyuetime componentsSeparatedByString:@"-"];
+            NSString * yuyuetime2=array[1];
+            NSString * yuyueStr=[NSString stringWithFormat:@"%@ %@:00",model.yuyuedate,yuyuetime2];
+            NSDateFormatter * dateformatter=[[NSDateFormatter alloc]init];
+            [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            NSDate * yuyue=[dateformatter dateFromString:yuyueStr];
+            NSTimeZone * fromzone1=[NSTimeZone systemTimeZone];//获取当前时区
+            NSInteger fromintervel1=[fromzone1 secondsFromGMTForDate:yuyue];
+            NSDate * yuyueDate=[yuyue dateByAddingTimeInterval:fromintervel1];
+            
+            if([model.zhuangtai isEqual:@"已取消"])
+            {
+                return NO;
+            }else if ([yuyueDate isEqualToDate:[nowDate earlierDate:yuyueDate]]) {
+                return NO;
+            }
+            else{
+                return YES;
+            }
         } else{
             return NO;
         }
     } else{
         return NO;
     }
-   
 }
 
 - (void)didReceiveMemoryWarning {
