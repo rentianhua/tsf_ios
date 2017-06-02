@@ -10,7 +10,7 @@
 #import <Masonry.h>
 #import "OtherHeader.h"
 #import "BQLabel.h"
-#define BQFONT [UIFont systemFontOfSize:8.5]
+#define BQFONT [UIFont systemFontOfSize:6.8]
 
 @interface TSFAgentCell ()
 
