@@ -92,10 +92,17 @@
         if (responseObj) {
             ReturnInfoModel * model=[ReturnInfoModel mj_objectWithKeyValues:responseObj];
             if ([model.success isEqual:@172]) {
-                [YJProgressHUD showMessage:@"评论成功" inView:weakSelf.view];
+                [YJProgressHUD showMessage:model.info inView:weakSelf.view];
                 dispatch_time_t popTime=dispatch_time(DISPATCH_TIME_NOW, (int64_t) (2.0* NSEC_PER_SEC));
                 dispatch_after(popTime, dispatch_get_main_queue(), ^{
                 [weakSelf.navigationController popViewControllerAnimated:YES];
+                });
+            }
+            if ([model.success isEqual:@173]) {
+                [YJProgressHUD showMessage:model.info inView:weakSelf.view];
+                dispatch_time_t popTime=dispatch_time(DISPATCH_TIME_NOW, (int64_t) (2.0* NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^{
+                    [weakSelf.navigationController popViewControllerAnimated:YES];
                 });
             }
         }
