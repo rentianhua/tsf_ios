@@ -20,6 +20,10 @@
     [self.yhqBtn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.yhqBtn3.backgroundColor=NavBarColor;
     [self.yhqBtn3 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.yhqBtn4.backgroundColor=NavBarColor;
+    [self.yhqBtn4 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.yhqBtn5.backgroundColor=NavBarColor;
+    [self.yhqBtn5 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *yhqBtn1;
 @property (weak, nonatomic) IBOutlet UIButton *yhqBtn2;
 @property (weak, nonatomic) IBOutlet UIButton *yhqBtn3;
+@property (weak, nonatomic) IBOutlet UIButton *yhqBtn4;
+@property (weak, nonatomic) IBOutlet UIButton *yhqBtn5;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *yhqBGView;

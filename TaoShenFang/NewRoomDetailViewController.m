@@ -451,7 +451,7 @@ NSInteger tagCount;//全局变量
         {
             {
                 if(_model.yhq.count>=3)
-                    return 325;
+                    return 350;
                 else
                     return 300;
             }
@@ -602,32 +602,43 @@ NSInteger tagCount;//全局变量
                 cell.label8.textColor=DESCCOL;
                 NSArray * yhqArray=_model.yhq;
                 
-                if (yhqArray.count==1) {
+                cell.yhqBtn1.hidden=YES;
+                cell.yhqBtn2.hidden=YES;
+                cell.yhqBtn3.hidden=YES;
+                cell.yhqBtn4.hidden=YES;
+                cell.yhqBtn5.hidden=YES;
+
+                if (yhqArray.count>=1) {
                     YSFYhqModel * yhqmodel=yhqArray[0];
                     [cell.yhqBtn1 setTitle:yhqmodel.title forState:UIControlStateNormal];
                     [cell.yhqBtn1 addTarget:self action:@selector(yhq1Action:) forControlEvents:UIControlEventTouchUpInside];
-                    cell.yhqBtn2.hidden=YES;
-                    cell.yhqBtn3.hidden=YES;
-                } else if (yhqArray.count==2){
-                    YSFYhqModel * yhqmodel=yhqArray[0];
-                    [cell.yhqBtn1 setTitle:yhqmodel.title forState:UIControlStateNormal];
-                    [cell.yhqBtn1 addTarget:self action:@selector(yhq1Action:) forControlEvents:UIControlEventTouchUpInside];
-                    YSFYhqModel * yhqmodel1=yhqArray[1];
-                    [cell.yhqBtn2 setTitle:yhqmodel1.title forState:UIControlStateNormal];
-                    [cell.yhqBtn2 addTarget:self action:@selector(yhq2Action:) forControlEvents:UIControlEventTouchUpInside];
-                    cell.yhqBtn3.hidden=YES;
+                    cell.yhqBtn1.hidden=NO;
                 }
-                else if (yhqArray.count==3){
-                    YSFYhqModel * yhqmodel=yhqArray[0];
-                    [cell.yhqBtn1 setTitle:yhqmodel.title forState:UIControlStateNormal];
-                    [cell.yhqBtn1 addTarget:self action:@selector(yhq1Action:) forControlEvents:UIControlEventTouchUpInside];
+                if (yhqArray.count>=2){
                     YSFYhqModel * yhqmodel1=yhqArray[1];
                     [cell.yhqBtn2 setTitle:yhqmodel1.title forState:UIControlStateNormal];
                     [cell.yhqBtn2 addTarget:self action:@selector(yhq2Action:) forControlEvents:UIControlEventTouchUpInside];
+                    cell.yhqBtn2.hidden=NO;
+                }
+                if (yhqArray.count>=3){
                     YSFYhqModel * yhqmodel2=yhqArray[2];
                     [cell.yhqBtn3 setTitle:yhqmodel2.title forState:UIControlStateNormal];
                     [cell.yhqBtn3 addTarget:self action:@selector(yhq3Action:) forControlEvents:UIControlEventTouchUpInside];
+                    cell.yhqBtn3.hidden=NO;
                 }
+                if (yhqArray.count>=4){
+                    YSFYhqModel * yhqmodel3=yhqArray[3];
+                    [cell.yhqBtn4 setTitle:yhqmodel3.title forState:UIControlStateNormal];
+                    [cell.yhqBtn4 addTarget:self action:@selector(yhq4Action:) forControlEvents:UIControlEventTouchUpInside];
+                    cell.yhqBtn4.hidden=NO;
+                }
+                if (yhqArray.count>=5){
+                    YSFYhqModel * yhqmodel4=yhqArray[4];
+                    [cell.yhqBtn5 setTitle:yhqmodel4.title forState:UIControlStateNormal];
+                    [cell.yhqBtn5 addTarget:self action:@selector(yhq5Action:) forControlEvents:UIControlEventTouchUpInside];
+                    cell.yhqBtn5.hidden=NO;
+                }
+
             } else{
                 cell.yhqBGView.hidden=YES;
             }
@@ -939,6 +950,18 @@ NSInteger tagCount;//全局变量
     
 }
 
+- (void)yhq4Action:(UIButton *)yuq2Btn{
+    
+    YSFYhqModel * yhqmodel=_model.yhq[3];
+    [self buyYHQ:yhqmodel];
+    
+}
+- (void)yhq5Action:(UIButton *)yuq3Btn{
+    
+    YSFYhqModel * yhqmodel=_model.yhq[4];
+    [self buyYHQ:yhqmodel];
+    
+}
 
 - (void)buyYHQ:(YSFYhqModel *)yhqmodel{
     if (NSUSER_DEF(USERINFO)==nil) {
