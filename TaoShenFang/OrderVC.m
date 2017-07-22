@@ -221,7 +221,9 @@
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 });
             }
-            
+            if ([infomodel.success isEqual:@97]) {
+                [YJProgressHUD showMessage:infomodel.info inView:self.view];
+            }
         }
         
     } failure:^(NSError *error) {

@@ -445,7 +445,7 @@
 		CAFF25061DEEC16000ED76D7 /* TSFNewDTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAFF25041DEEC16000ED76D7 /* TSFNewDTCell.xib */; };
 		CAFF9ABB1E0B7F3C00380DA9 /* Chat_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFF9ABA1E0B7F3C00380DA9 /* Chat_Model.m */; };
 		CAFF9ABE1E0B7F5200380DA9 /* Chat_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFF9ABD1E0B7F5200380DA9 /* Chat_Cell.m */; };
-		E13E4C731EBB237F00014EEB /* libPods-TaoShenFang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E13E4C721EBB237F00014EEB /* libPods-TaoShenFang.a */; };
+		E1FD3FFA1EE13A1C002CE13A /* libPods-TaoShenFang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E13E4C721EBB237F00014EEB /* libPods-TaoShenFang.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1339,6 +1339,7 @@
 		CAFF9ABD1E0B7F5200380DA9 /* Chat_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chat_Cell.m; sourceTree = "<group>"; };
 		DA72559C3570382C0574B1B1 /* Pods-TaoShenFang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaoShenFang.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaoShenFang/Pods-TaoShenFang.release.xcconfig"; sourceTree = "<group>"; };
 		E13E4C721EBB237F00014EEB /* libPods-TaoShenFang.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-TaoShenFang.a"; path = "build/Debug-iphoneos/libPods-TaoShenFang.a"; sourceTree = "<group>"; };
+		E1FD3FF71EE131FC002CE13A /* libPods-TaoShenFang.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-TaoShenFang.a"; path = "build/Debug-iphonesimulator/libPods-TaoShenFang.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1362,7 +1363,7 @@
 				CA0667DF1DE59108002CB02B /* libc++.tbd in Frameworks */,
 				CA0667F31DE593D9002CB02B /* AlipaySDK.framework in Frameworks */,
 				CA25E29B1DA8EB2600421F48 /* ImageIO.framework in Frameworks */,
-				E13E4C731EBB237F00014EEB /* libPods-TaoShenFang.a in Frameworks */,
+				E1FD3FFA1EE13A1C002CE13A /* libPods-TaoShenFang.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1386,6 +1387,7 @@
 		1A31DDF1ACEB1F6EFCC198DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1FD3FF71EE131FC002CE13A /* libPods-TaoShenFang.a */,
 				E13E4C721EBB237F00014EEB /* libPods-TaoShenFang.a */,
 				CA57316F1E1DFC5400CDC102 /* libxml2.tbd */,
 				CA0667F01DE5916D002CB02B /* CFNetwork.framework */,
@@ -4098,7 +4100,9 @@
 					"$(PROJECT_DIR)/TaoShenFang/AliPay",
 					"$(PROJECT_DIR)/TaoShenFang",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphonesimulator",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
@@ -4189,7 +4193,9 @@
 					"$(PROJECT_DIR)/TaoShenFang/AliPay",
 					"$(PROJECT_DIR)/TaoShenFang",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphonesimulator",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
